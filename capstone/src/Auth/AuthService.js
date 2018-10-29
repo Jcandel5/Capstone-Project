@@ -6,14 +6,25 @@ import router from './../router'
 
 export default class AuthService {
 
-  authenticated = this.isAuthenticated()
-  authNotifier = new EventEmitter()
-
+ authenticated = this.isAuthenticated()
+ authNotifier = new EventEmitter()
+ 
   constructor () {
     this.login = this.login.bind(this)
     this.setSession = this.setSession.bind(this)
     this.logout = this.logout.bind(this)
     this.isAuthenticated = this.isAuthenticated.bind(this)
+  }
+
+  auth0 = new auth0.WebAuth({
+    domain: 'awktalk.auth0.com',
+    clientID: 'OWVT4J8YJVsCSl44HyRl3HvLAdYUFo8u',
+    redirectUri: 'http://localhost:8080/callback',
+    responseType: 'token id_token',
+    scope: 'openid'
+  })
+  login() {
+      this.auth0.authorize()
   }
 
   // ...
