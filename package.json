@@ -1,0 +1,22 @@
+{
+  "name": "capstone-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jcandel5/Capstone-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jcandel5/Capstone-Project/issues"
+  },
+  "homepage": "https://github.com/Jcandel5/Capstone-Project#readme",
+  "dependencies": {
+    "auth0-js": "^9.8.1"
+  }
+}
