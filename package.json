@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Jcandel5/Capstone-Project#readme",
   "dependencies": {
+    "EventEmitter": "^1.0.0",
     "auth0-js": "^9.8.1"
   }
 }
