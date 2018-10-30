@@ -33,5 +33,6 @@ export default new Router({
     path: '/sumbit',
       name: 'submit',
     },
+    
   ]
 })

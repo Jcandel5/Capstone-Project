@@ -3,22 +3,20 @@
     <div id="navBar" 
       :auth="auth" 
       :authenticated="authenticated">
-      <!-- <div id="Home">
-        <router-link to="/">Home</router-link>
-      </div>
-      <div id="Signup">
-        <router-link to="/signup">Sign Up</router-link>
-      </div>
-      <div id="Login">
-        <router-link to="/signin">Sign In</router-link>
-      </div> -->
-    
-    <button
+          <button
             class="btn btn-primary btn-margin"
             v-if="!authenticated"
             @click="login()">
               Log In
           </button>
+          <button
+            class="btn btn-primary btn-margin"
+            v-if="!authenticated"
+            @click="logout()">
+              Log Out
+          </button>
+          <EmployeeSearchPage/>
+          <Home/>
     <router-view
         :auth="auth" 
         :authenticated="authenticated">
@@ -28,9 +26,12 @@
   
 </template>
 <script>
+
 import signup from './views/Signup.vue'
 import signin from './views/SignIn.vue'
 import AuthService from './Auth/AuthService'
+import Home from './views/Home.vue'
+import EmployeeSearchPage from './components/EmployeeSearchPage.vue'
 
 let auth = new AuthService()
 const { login, logout, authenticated, authNotifier } = auth
@@ -38,7 +39,9 @@ export default {
   name: 'App',
   components: {
     signup,
-    signin
+    signin,
+    Home,
+    EmployeeSearchPage
   },
   data() {
     authNotifier.on('authChange', authState => {
