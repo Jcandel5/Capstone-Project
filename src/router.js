@@ -13,14 +13,19 @@ export default new Router({
       redirect: "/home"
     },
     {
-      path: '/signin',
+      path: '/JobForm',
       name: 'signin',
-      component: () => import('./views/SignIn.vue')
+      component: () => import('./views/JobForm.vue')
     },
     {
-      path: '/signup',
+      path: '/PayForm',
       name: 'signup',
-      component: () => import('./views/Signup.vue')
+      component: () => import('./views/PayForm.vue')
+    },
+    {
+      path: '/AreaForm',
+      name: 'signup',
+      component: () => import('./views/AreaForm.vue')
     },
     {
       path: '/callback',

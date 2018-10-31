@@ -1,8 +1,8 @@
 <template>
 <div>
-    <button id='job'>Jobs</button>
-    <button id='job'>Pay</button>
-    <button id='job'>Area</button>
+    <button id='job'><router-link :to="{ path: 'JobForm' }">Jobs</router-link></button>
+    <button id='job'><router-link :to="{ path: 'PayForm' }">Pay</router-link></button>
+    <button id='job'><router-link :to="{ path: 'AreaForm' }">Area</router-link></button>
 </div>
 </template>
 <script>

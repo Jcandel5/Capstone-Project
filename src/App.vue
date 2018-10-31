@@ -3,31 +3,28 @@
     <div id="navBar" 
       :auth="auth" 
       :authenticated="authenticated">
-          <button
-            class="btn btn-primary btn-margin"
-            v-if="!authenticated"
+          <button v-if="!authenticated"
             @click="login()">
               Log In
           </button>
-          <button
-            class="btn btn-primary btn-margin"
-            v-if="!authenticated"
+          <button v-if="!authenticated"
             @click="logout()">
               Log Out
           </button>
-          <Home/>
-    <router-view
+      <router-view
         :auth="auth" 
         :authenticated="authenticated">
-    </router-view>
+      </router-view>
     </div>
+      <Home/>
   </div>
   
 </template>
 <script>
 
-import signup from './views/Signup.vue'
-import signin from './views/SignIn.vue'
+import PayForm from './views/PayForm.vue'
+import JobForm from './views/JobForm.vue'
+import AreaForm from './views/AreaForm.vue'
 import AuthService from './Auth/AuthService'
 import Home from './views/Home.vue'
 import EmployeeSearchPage from './components/EmployeeSearchPage.vue'
@@ -37,8 +34,9 @@ const { login, logout, authenticated, authNotifier } = auth
 export default {
   name: 'App',
   components: {
-    signup,
-    signin,
+    PayForm,
+    JobForm,
+    AreaForm,
     Home,
     EmployeeSearchPage
   },
