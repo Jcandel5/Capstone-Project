@@ -9,22 +9,18 @@ export default new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
-      redirect: "/home"
-    },
-    {
       path: '/JobForm',
-      name: 'signin',
+      name: 'JobForm',
       component: () => import('./views/JobForm.vue')
     },
     {
       path: '/PayForm',
-      name: 'signup',
+      name: 'PayForm',
       component: () => import('./views/PayForm.vue')
     },
     {
       path: '/AreaForm',
-      name: 'signup',
+      name: 'AreaForm',
       component: () => import('./views/AreaForm.vue')
     },
     {

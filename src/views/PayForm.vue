@@ -6,8 +6,10 @@
 
 <script>
 export default {
-  name: "payForm"
+  name: "PayForm"
 }
+
+
 </script>
 
 <style>
