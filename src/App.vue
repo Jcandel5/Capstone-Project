@@ -15,7 +15,6 @@
             @click="logout()">
               Log Out
           </button>
-          <EmployeeSearchPage/>
           <Home/>
     <router-view
         :auth="auth" 

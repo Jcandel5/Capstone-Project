@@ -10,8 +10,9 @@ export default {
     name: 'EmployeeSearchPage'
 }
 </script>
-<style>
+<style scoped>
 #job{
     margin-top: 50px;
 }
+
 </style>

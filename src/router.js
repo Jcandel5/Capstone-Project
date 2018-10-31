@@ -10,29 +10,25 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      redirect: "/home"
     },
     {
       path: '/signin',
       name: 'signin',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/SignIn.vue')
+      component: () => import('./views/SignIn.vue')
     },
     {
       path: '/signup',
       name: 'signup',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/Signup.vue')
+      component: () => import('./views/Signup.vue')
     },
     {
-    path: '/sumbit',
-      name: 'submit',
+      path: '/callback',
+      name: 'Employee Search Page',
+      
+      component: () => import('./components/EmployeeSearchPage.vue')
     },
+    
     
   ]
 })
