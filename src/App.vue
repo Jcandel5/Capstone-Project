@@ -28,7 +28,8 @@ import JobForm from './views/JobForm.vue'
 import AreaForm from './views/AreaForm.vue'
 import AuthService from './Auth/AuthService'
 import Home from './views/Home.vue'
-import EmployeeSearchPage from './components/EmployeeSearchPage.vue'
+
+
 
 let auth = new AuthService()
 const { login, logout, authenticated, authNotifier } = auth
@@ -38,8 +39,7 @@ export default {
     PayForm,
     JobForm,
     AreaForm,
-    Home,
-    EmployeeSearchPage
+    Home
   },
   data() {
     authNotifier.on('authChange', authState => {
@@ -58,5 +58,9 @@ export default {
 </script>
 
 <style>
+#navBar{
+  float: left;
+  justify-content: center;
+}
 
 </style>

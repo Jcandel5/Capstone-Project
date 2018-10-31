@@ -16,6 +16,10 @@ export default {
  }
 }
 </script>
-<style>
+<style scoped>
+.Home{
+  display: flex;
+  justify-content: center;
+}
 
 </style>

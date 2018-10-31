@@ -24,11 +24,24 @@ export default new Router({
       component: () => import('./views/AreaForm.vue')
     },
     {
-      path: '/callback',
+      path: '/Employee',
       name: 'Employee Search Page',
       
       component: () => import('./components/EmployeeSearchPage.vue')
     },
+    {
+      path: '/callback',
+      name: 'Choice Page',
+      
+      component: () => import('./components/ChoicePage.vue')
+    },
+    {
+      path: '/Employer',
+      name: 'EmployerPostPage',
+      
+      component: () => import('./components/EmployerPostPage.vue')
+    },
+    
     
     
   ]

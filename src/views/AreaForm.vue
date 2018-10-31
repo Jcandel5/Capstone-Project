@@ -1,16 +1,62 @@
 <template>
- <div class="areaForm">
-   <h1>Area Form</h1>
- </div>
+  <div class="areaForm">
+    <h1>Pay Form</h1>
+      <div v-if="jobs && jobs.length">
+        <div v-for="job of jobs">
+          <div class="jobContainer">
+            <div class="area">
+              {{job.area}}
+            </div>
+            <div class="pay">
+              {{job.pay}}
+            </div>
+            <div class="title">
+              {{ job.title }} 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </template>
-<script>
-export default {
-  name: "areaForm"
-}
 
+<script>
+import axios from 'axios'
+export default {
+  name: "AreaForm",
+  data () {
+    return {
+      jobs: [], 
+      apiURL: "https://protected-forest-50209.herokuapp.com/api/jobs"
+    }
+  },
+  mounted () {
+    axios.get(this.apiURL)
+    .then(response => {
+      console.log(response.data)
+      this.jobs = response.data
+    })
+    
+  }
+
+
+
+}
 </script>
 
-<style>
-
+<style scoped>
+.title{
+  background-color: lightblue
+  
+}
+.area{
+  background-color: coral
+}
+.pay{
+  background-color: indianred
+}
+.jobContainer{
+  margin-bottom: 5px;
+  border: 2px solid black;
+}
 </style>
 
