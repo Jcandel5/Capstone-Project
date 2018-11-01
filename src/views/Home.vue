@@ -18,10 +18,10 @@ export default {
 </script>
 <style scoped>
 
-img{
+/* img{
   height: 150px;
   width: 150px;
   margin-bottom: 15px;
-}
+} */
 
 </style>

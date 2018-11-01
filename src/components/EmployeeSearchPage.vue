@@ -1,5 +1,6 @@
 <template>
 <div>
+    <button class="EmoloyeeCurrentJobPage"><router-link :to="{ path: 'EmoloyeeCurrentJobPage' }">Your Current Jobs</router-link></button>
     <button id='job'><router-link :to="{ path: 'JobForm' }">Jobs</router-link></button>
     <button id='job'><router-link :to="{ path: 'PayForm' }">Pay</router-link></button>
     <button id='job'><router-link :to="{ path: 'AreaForm' }">Area</router-link></button>
@@ -11,8 +12,8 @@ export default {
 }
 </script>
 <style scoped>
-#job{
+/* #job{
     margin-top: 50px;
-}
+} */
 
 </style>

@@ -41,6 +41,18 @@ export default new Router({
       
       component: () => import('./components/EmployerPostPage.vue')
     },
+    {
+      path: '/EmployerCurrentJobPage',
+      name: 'EmployerCurrentJobPage',
+      
+      component: () => import('./components/EmployerCurrentJobPage.vue')
+    },
+    {
+      path: '/EmoloyeeCurrentJobPage',
+      name: 'EmployeeCurrentJobPage',
+      
+      component: () => import('./components/EmoloyeeCurrentJobPage.vue')
+    },
     
     
     

@@ -1,6 +1,7 @@
 <template>
   <div id="app">
       <Home/>
+      <HomeButton/>
     <div id="navBar" 
       :auth="auth" 
       :authenticated="authenticated">
@@ -17,7 +18,6 @@
         :authenticated="authenticated">
       </router-view>
     </div>
-      
   </div>
   
 </template>
@@ -28,7 +28,13 @@ import JobForm from './views/JobForm.vue'
 import AreaForm from './views/AreaForm.vue'
 import AuthService from './Auth/AuthService'
 import Home from './views/Home.vue'
+import HomeButton from './components/HomeButon.vue'
+import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+Vue.use(BootstrapVue);
 
 
 let auth = new AuthService()
@@ -39,7 +45,8 @@ export default {
     PayForm,
     JobForm,
     AreaForm,
-    Home
+    Home,
+    HomeButton
   },
   data() {
     authNotifier.on('authChange', authState => {

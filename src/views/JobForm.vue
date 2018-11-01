@@ -43,7 +43,7 @@ export default {
 </script>
 
 <style scoped>
-.title{
+/* .title{
   background-color: lightblue
   
 }
@@ -52,7 +52,7 @@ export default {
 }
 .pay{
   background-color: indianred
-}
+} */
 /* .jobContainer{
   margin-bottom: 5px;
   border: 2px solid black;

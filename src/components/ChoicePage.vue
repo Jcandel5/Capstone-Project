@@ -15,13 +15,13 @@ export default {
 
 
 <style scoped>
-.Employer{
+/* .Employer{
     display:flex;
     justify-content: center;
 }
 .Employee{
     display:flex;
     justify-content: center;
-}
+} */
 
 </style>
