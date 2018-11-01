@@ -53,9 +53,9 @@ export default {
 .pay{
   background-color: indianred
 }
-.jobContainer{
+/* .jobContainer{
   margin-bottom: 5px;
   border: 2px solid black;
-}
+}  */
 </style>
 

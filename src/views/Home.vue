@@ -1,6 +1,6 @@
 <template>
  <div class="Home">
-   <img src="https://snag.gy/DVQC4g.jpg">
+   <img src="https://snag.gy/DfP4yg.jpg">
  </div>
 </template>
 
@@ -17,9 +17,11 @@ export default {
 }
 </script>
 <style scoped>
-.Home{
-  display: flex;
-  justify-content: center;
+
+img{
+  height: 150px;
+  width: 150px;
+  margin-bottom: 15px;
 }
 
 </style>

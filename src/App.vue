@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+      <Home/>
     <div id="navBar" 
       :auth="auth" 
       :authenticated="authenticated">
@@ -16,7 +17,6 @@
         :authenticated="authenticated">
       </router-view>
     </div>
-      <Home/>
       
   </div>
   
@@ -58,9 +58,13 @@ export default {
 </script>
 
 <style>
-#navBar{
-  float: left;
+/* #app{
+  background-color: black;
+} */
+/* #navBar{
+  display: flex;
+  float: center;
   justify-content: center;
-}
+} */
 
 </style>
