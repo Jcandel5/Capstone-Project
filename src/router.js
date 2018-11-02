@@ -7,8 +7,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       path: '/JobForm',
       name: 'JobForm',
       component: () => import('./views/JobForm.vue')
@@ -26,35 +25,48 @@ export default new Router({
     {
       path: '/Employee',
       name: 'Employee Search Page',
-      
+
       component: () => import('./components/EmployeeSearchPage.vue')
     },
     {
       path: '/callback',
       name: 'Choice Page',
-      
+
       component: () => import('./components/ChoicePage.vue')
     },
     {
       path: '/Employer',
       name: 'EmployerPostPage',
-      
+
       component: () => import('./components/EmployerPostPage.vue')
     },
     {
       path: '/EmployerCurrentJobPage',
       name: 'EmployerCurrentJobPage',
-      
+
       component: () => import('./components/EmployerCurrentJobPage.vue')
     },
     {
+      path: '/EmployerEditJobPage',
+      name: 'EmployerEditJobPage',
+
+      component: () => import('./components/EmployerEditJobPage.vue')
+    },
+    {
+      path: '/EmployerDeleteJobPage',
+      name: 'EmployerDeleteJobPage',
+
+      component: () => import('./components/EmployerDeleteJobPage.vue')
+    },
+    {
       path: '/EmoloyeeCurrentJobPage',
-      name: 'EmployeeCurrentJobPage',
-      
+      name: 'EmoloyeeCurrentJobPage',
+
       component: () => import('./components/EmoloyeeCurrentJobPage.vue')
     },
-    
-    
-    
+
+
+
+
   ]
 })

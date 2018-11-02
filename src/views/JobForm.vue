@@ -13,6 +13,9 @@
             <div class="pay">
               {{job.pay}}
             </div>
+            <div class="requestJob">
+              <button>Request Job</button>
+            </div>
           </div>
         </div>
       </div>
@@ -33,12 +36,8 @@ export default {
     .then(response => {
       console.log(response.data)
       this.jobs = response.data
-    })
-    
+    }) 
   }
-
-
-
 }
 </script>
 

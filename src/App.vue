@@ -1,28 +1,21 @@
 <template>
   <div id="app">
-      <Home/>
-      <HomeButton/>
-    <div id="navBar" 
-      :auth="auth" 
-      :authenticated="authenticated">
-          <button v-if="!authenticated"
-            @click="login()">
-              Log In
-          </button>
-          <button v-if="!authenticated"
-            @click="logout()">
-              Log Out
-          </button>
-      <router-view
-        :auth="auth" 
-        :authenticated="authenticated">
+    <Home />
+    <HomeButton />
+    <div id="navBar" :auth="auth" :authenticated="authenticated">
+      <button v-if="!authenticated" @click="login()">
+        Log In
+      </button>
+      <button v-if="!authenticated" @click="logout()">
+        Log Out
+      </button>
+      <router-view :auth="auth" :authenticated="authenticated">
       </router-view>
     </div>
   </div>
-  
+
 </template>
 <script>
-
 import PayForm from './views/PayForm.vue'
 import JobForm from './views/JobForm.vue'
 import AreaForm from './views/AreaForm.vue'
@@ -38,7 +31,12 @@ Vue.use(BootstrapVue);
 
 
 let auth = new AuthService()
-const { login, logout, authenticated, authNotifier } = auth
+const {
+  login,
+  logout,
+  authenticated,
+  authNotifier
+} = auth
 export default {
   name: 'App',
   components: {

@@ -1,22 +1,22 @@
 <template>
   <div class="areaForm">
     <h1>Pay Form</h1>
-      <div v-if="jobs && jobs.length">
-        <div v-for="job of jobs">
-          <div class="jobContainer">
-            <div class="area">
-              {{job.area}}
-            </div>
-            <div class="pay">
-              {{job.pay}}
-            </div>
-            <div class="title">
-              {{ job.title }} 
-            </div>
+    <div v-if="jobs && jobs.length">
+      <div v-for="job of jobs">
+        <div class="jobContainer">
+          <div class="area">
+            {{job.area}}
+          </div>
+          <div class="pay">
+            {{job.pay}}
+          </div>
+          <div class="title">
+            {{ job.title }}
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>

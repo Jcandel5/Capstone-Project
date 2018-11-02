@@ -1,13 +1,7 @@
 <template>
-  <div>
-    <div class="myJobsButton">
-      <button>
-        <router-link :to="{ path: 'EmployerCurrentJobPage' }">Your Current Jobs</router-link>
-      </button>
-    </div>
-    <h1>Employer Post Page</h1>
-
-    <div class="Post">
+    <div>
+        <h1>Employer Delete job Page</h1>
+            <div class="Post">
       <form id="app" @submit="onSubmit">
 
         <div class="title">
@@ -23,22 +17,21 @@
           <input class="area" v-model="form.area" type="text" name="area">
         </div>
         <div>
-
+            
         </div>
         <div>
-          <button type="submit">Post Job </button>
+          <button type="submit">Delete Job </button>
         </div>
       </form>
     </div>
     <!-- <button type="sumbit">Post Job</button> -->
-  </div>
+    </div>
 </template>
 
 <script>
-import axios from "axios";
 export default {
-  name: "EmployerPostPage",
-  data() {
+    name: "EmployerDeleteJobPage",
+    data() {
     return {
       msg: "Your Post Has Been Added",
       // jobs : {title: "", pay: "", area: ""},
@@ -80,7 +73,7 @@ export default {
       });
     },
     mounted() {
-      axios.post(this.apiURL).then(response => {
+      axios.delete(this.apiURL).then(response => {
         console.log(response.data);
         this.newJob = response.data;
       });
