@@ -19,8 +19,8 @@
             </button>
           </div>
           <div class="deleteJob">
-            <button>
-              <router-link :to="{ path: 'EmployerDeleteJobPage' }">Delete</router-link>
+            <button type="submit">
+              Delete
               </button>
           </div>
         </div>

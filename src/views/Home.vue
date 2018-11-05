@@ -1,6 +1,6 @@
 <template>
  <div class="Home">
-   <img src="https://snag.gy/DfP4yg.jpg">
+   <b-img center thumbnail fluid src="https://snag.gy/DfP4yg.jpg" alt="Thumbnail" height="200" width="200" />
  </div>
 </template>
 
@@ -8,6 +8,7 @@
 <script>
 // @ is an alias to /src
 import Home from '@/views/Home.vue'
+import BootstrapVue from 'bootstrap-vue'
 
 export default {
  name: 'Home',
@@ -17,11 +18,10 @@ export default {
 }
 </script>
 <style scoped>
-
-/* img{
-  height: 150px;
-  width: 150px;
-  margin-bottom: 15px;
-} */
+img{
+  background-color: black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 
 </style>

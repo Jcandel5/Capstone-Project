@@ -53,12 +53,6 @@ export default new Router({
       component: () => import('./components/EmployerEditJobPage.vue')
     },
     {
-      path: '/EmployerDeleteJobPage',
-      name: 'EmployerDeleteJobPage',
-
-      component: () => import('./components/EmployerDeleteJobPage.vue')
-    },
-    {
       path: '/EmoloyeeCurrentJobPage',
       name: 'EmoloyeeCurrentJobPage',
 

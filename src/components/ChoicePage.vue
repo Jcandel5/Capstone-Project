@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button class="Employer"><router-link :to="{ path: 'Employer' }">Employer</router-link></button>
-        <button class="Employee"><router-link :to="{ path: 'Employee' }">Employee</router-link></button>
+        <b-button class="Employer"><router-link :to="{ path: 'Employer' }">Employer</router-link></b-button>
+        <b-button class="Employee"><router-link :to="{ path: 'Employee' }">Employee</router-link></b-button>
     </div>
 </template>
 
@@ -15,13 +15,6 @@ export default {
 
 
 <style scoped>
-/* .Employer{
-    display:flex;
-    justify-content: center;
-}
-.Employee{
-    display:flex;
-    justify-content: center;
-} */
+
 
 </style>

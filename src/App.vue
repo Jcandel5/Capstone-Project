@@ -1,17 +1,21 @@
 <template>
   <div id="app">
     <Home />
-    <HomeButton />
-    <div id="navBar" :auth="auth" :authenticated="authenticated">
-      <button v-if="!authenticated" @click="login()">
+    <b-container class="bv-example-row" :auth="auth" :authenticated="authenticated">
+      <b-row>
+      <span><b-button b-col v-if="!authenticated" @click="login()">
         Log In
-      </button>
-      <button v-if="!authenticated" @click="logout()">
+      </b-button>
+      <b-button b-col v-if="!authenticated" @click="logout()">
         Log Out
-      </button>
+      </b-button></span>
+      <div class="homeButton">
+      <HomeButton />
+      </div>
+      </b-row>
       <router-view :auth="auth" :authenticated="authenticated">
       </router-view>
-    </div>
+    </b-container>
   </div>
 
 </template>
@@ -63,13 +67,18 @@ export default {
 </script>
 
 <style>
-/* #app{
-  background-color: black;
-} */
-/* #navBar{
+#app{
+  background-color: green;
+  height: 1340px;
+} 
+.bv-example-row{
   display: flex;
   float: center;
   justify-content: center;
-} */
+}
+button{
+  color: white;
+  margin-top: 15px;
+}
 
 </style>
