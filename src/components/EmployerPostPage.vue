@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="myJobsButton">
-      <button>
+    <div class="EmployerCurrent">
+      <b-button>
         <router-link :to="{ path: 'EmployerCurrentJobPage' }">Your Current Jobs</router-link>
-      </button>
+      </b-button>
     </div>
     <h1>Employer Post Page</h1>
 
@@ -11,22 +11,26 @@
       <form id="app" @submit="onSubmit">
 
         <div class="title">
-          <label class="title">Job Title</label>
-          <input class="title" v-model="form.title" type="text" name="title">
+          <label class="jobtitles">Job Title</label>
+          <input class="jobtitle" v-model="form.title" type="text" name="title">
+        </div>
+        <div class="description">
+          <label class="jobdescriptions">Description</label>
+          <input class="jobdescription" v-model="form.description" type="text" name="description">
         </div>
         <div class="pay">
-          <label class="pay">Pay</label>
-          <input class="pay" v-model="form.pay" type="text" name="pay">
+          <label class="jobpays">Pay</label>
+          <input class="jobpay" v-model="form.pay" type="text" name="pay">
         </div>
         <div class="area">
-          <label class="area">Area</label>
-          <input class="area" v-model="form.area" type="text" name="area">
+          <label class="jobareas">Area</label>
+          <input class="jobarea" v-model="form.area" type="text" name="area">
         </div>
         <div>
 
         </div>
-        <div>
-          <button type="submit">Post Job </button>
+        <div class="postJob">
+          <b-button v-on:click="notify" type="submit" >Post Job </b-button>
         </div>
       </form>
     </div>
@@ -51,6 +55,9 @@ export default {
     };
   },
   methods: {
+    notify(evt){
+      alert('You made a post!')
+    },
     onSubmit(evt) {
       evt.preventDefault();
       return fetch(this.apiURL, {
@@ -90,4 +97,96 @@ export default {
 </script>
 
 <style>
+h1{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: white;
+}
+.title{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  
+}
+.pay{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.area{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.description{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.jobtitle{
+  margin-left: 15px;
+  display: flex;
+  width: 150px;
+}
+.jobpay{
+  margin-left: 15px;
+  display: flex;
+  width: 350px;
+  color:white;
+}
+.jobarea{
+  margin-left: 15px;
+  display: flex;
+  width: 350px;
+}
+.jobdescription{
+  margin-left: 5px;
+  display: flex;
+  width: 250px;
+}
+
+.postJob{
+  display:flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+}
+.EmployerCurrent{
+   display:flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+.jobpays{
+  color:white;
+}
+.jobareas{
+  color:white;
+}
+.jobtitles{
+  color:white;
+}
+.description{
+  color: white;
+}
+input.jobpay{
+  color:black;
+}
+
+
+
+
 </style>

@@ -1,17 +1,20 @@
 <template>
     <div>
-        <button class="EmoloyeeCurrentJobPage">
+        <div class=CurrentJobs>
+        <b-button class="EmoloyeeCurrentJobPage">
             <router-link :to="{ path: 'EmoloyeeCurrentJobPage' }">Your Current Jobs</router-link>
-        </button>
-        <button id='job'>
+        </b-button>
+        </div>
+        <div class=jobSearch>
+        <b-button id='job'>
             <router-link :to="{ path: 'JobForm' }">Jobs</router-link>
-        </button>
-        <button id='job'>
+        </b-button>
+        </div>
+        <div class="paySearch">
+        <b-button id='pay'>
             <router-link :to="{ path: 'PayForm' }">Pay</router-link>
-        </button>
-        <button id='job'>
-            <router-link :to="{ path: 'AreaForm' }">Area</router-link>
-        </button>
+        </b-button>
+        </div>
     </div>
 </template>
 <script>
@@ -19,9 +22,29 @@ export default {
     name: 'EmployeeSearchPage'
 }
 </script>
-<style scoped>
-/* #job{
+<style>
+.CurrentJobs{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.jobSearch{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.paySearch{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.areaSearch{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.EmoloyeeCurrentJobPage{
     margin-top: 50px;
-} */
+}
 
 </style>

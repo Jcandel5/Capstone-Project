@@ -6,7 +6,7 @@
 
         <div class="title">
           <label class="title">Job Title</label>
-          <input class="title" v-model="form.title" type="text" name="title">
+          <input placeholder="" class="title" v-model="form.title" type="text" name="title">
         </div>
         <div class="pay">
           <label class="pay">Pay</label>
@@ -16,11 +16,15 @@
           <label class="area">Area</label>
           <input class="area" v-model="form.area" type="text" name="area">
         </div>
+        <div class="description">
+          <label class="description">Description</label>
+          <input class="description" v-model="form.description" type="text" name="description">
+        </div>
         <div>
 
         </div>
-        <div>
-          <button type="submit">Re-post Job </button>
+        <div class="RepostJob">
+          <b-button type="submit">Re-post Job </b-button>
         </div>
       </form>
     </div>
@@ -40,7 +44,8 @@ export default {
       form: {
         title: "",
         pay: "",
-        area: ""
+        area: "",
+        description: ""
       }
     };
   },
@@ -116,4 +121,31 @@ export default {
 </script>
 
 <style>
+.title{
+  color:white;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+.pay{
+  color:white;
+  margin-bottom:15px;
+  margin-left: 5px;
+
+}
+.area{
+  color:white;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+.description{
+  margin-left: 5px;
+  margin-bottom: 15px;
+}
+.RepostJob{
+  display:flex;
+  justify-content: center;
+}
+h1{
+  margin-bottom: 15px;
+}
 </style>

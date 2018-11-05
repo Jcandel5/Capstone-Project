@@ -2,16 +2,18 @@
   <div class="payForm">
     <h1>Pay Form</h1>
       <div v-if="jobs && jobs.length">
-        <div v-for="job of jobs">
+        <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
           <div class="jobContainer">
-            <div class="pay">
-              {{job.pay}}
-            </div>
-            <div class="title">
-              {{ job.title }} 
-            </div>
-            <div class="area">
-              {{job.area}}
+            <b-card-group deck class="mb-3">
+            <b-card bg-variant="success" text-variant="white" header="Job" class="text-center">
+              <p class="card-text">{{job.title}}</p>
+              <p class="card-text">{{job.pay}}.</p>
+              <p class="card-text">{{job.jobDescription}}.</p>
+              <p class="card-text">{{job.area}} </p>
+            </b-card>
+          </b-card-group>
+            <div class="requestJob">
+              <b-button class="requestJob">Request Job</b-button>
             </div>
           </div>
         </div>

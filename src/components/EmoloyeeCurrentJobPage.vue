@@ -1,17 +1,22 @@
 <template>
   <div>
-    <h1> Employer Current Jobs</h1>
+    <h1> Employee Current Jobs</h1>
     <div v-if="jobs && jobs.length">
-      <div v-for="job of jobs">
+      <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
         <div class="jobContainer">
-          <div class="title">
-            {{ job.title }}
+          <b-card-group deck class="mb-3">
+            <b-card bg-variant="success" text-variant="white" header="Job" class="text-center">
+              <p class="card-text">{{job.title}}</p>
+              <p class="card-text">{{job.jobDescription}}</p>
+              <p class="card-text">{{job.pay}}.</p>
+              <p class="card-text">{{job.area}} </p>
+            </b-card>
+          </b-card-group>
+          <div class="requestJob">
+              <b-button class="requestJob">Request Job</b-button>
           </div>
-          <div class="area">
-            {{job.area}}
-          </div>
-          <div class="pay">
-            {{job.pay}}
+          <div class="collectMoney">
+              <b-button class="collectMoney">Collect Money</b-button>
           </div>
         </div>
       </div>
@@ -39,5 +44,12 @@ export default {
 </script>
 
 <style>
-
+.requestJob{
+  margin-bottom: 5px;
+}
+.collectMoney{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
 </style>

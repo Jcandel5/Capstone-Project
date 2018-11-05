@@ -1,6 +1,6 @@
 <template>
     <div class="homeButton">
-        <b-button><router-link :to="{ path: '/' }">Home</router-link></b-button>
+        <b-button ><router-link :to="{ path: '/' }">Home</router-link></b-button>
     </div>
 </template>
 

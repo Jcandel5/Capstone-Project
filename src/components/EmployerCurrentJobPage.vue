@@ -1,27 +1,26 @@
 <template>
   <div>
-    <h1> Employer Current Jobs</h1>
+    <h1> Current Jobs</h1>
     <div v-if="jobs && jobs.length">
-      <div v-for="job of jobs">
+      <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
         <div class="jobContainer">
-          <div class="title">
-            {{ job.title }}
-          </div>
-          <div class="area">
-            {{job.area}}
-          </div>
-          <div class="pay">
-            {{job.pay}}
-          </div>
+          <b-card-group deck class="mb-3">
+            <b-card bg-variant="success" text-variant="white" header="Job" class="text-center">
+              <p class="card-text">{{job.title}}</p>
+              <p class="card-text">{{job.pay}}.</p>
+              <p class="card-text">{{job.jobDescription}}.</p>
+              <p class="card-text">{{job.area}} </p>
+            </b-card>
+          </b-card-group>
           <div class="editJob">
-            <button>
+            <b-button>
               <router-link :to="{ path: 'EmployerEditJobPage' }">Edit</router-link>
-            </button>
+            </b-button>
           </div>
           <div class="deleteJob">
-            <button type="submit">
+            <b-button type="submit">
               Delete
-              </button>
+            </b-button>
           </div>
         </div>
       </div>
@@ -49,4 +48,37 @@ export default {
 </script>
 
 <style>
+.jobstitle {
+  display: flex;
+  justify-content: left;
+}
+.jobspay {
+  display: flex;
+  justify-content: left;
+}
+.jobsarea {
+  display: flex;
+  justify-content: left;
+}
+div.jobstitle {
+  margin-bottom: 15px;
+  background-color: white;
+}
+div.jobspay {
+  margin-bottom: 15px;
+  background-color: white;
+}
+div.jobsarea {
+  margin-bottom: 15px;
+  background-color: white;
+}
+.editJob {
+  display: flex;
+  justify-content: center;
+}
+.deleteJob {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
 </style>

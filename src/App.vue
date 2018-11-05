@@ -2,16 +2,14 @@
   <div id="app">
     <Home />
     <b-container class="bv-example-row" :auth="auth" :authenticated="authenticated">
-      <b-row>
+      <b-row class="buttons">
       <span><b-button b-col v-if="!authenticated" @click="login()">
         Log In
       </b-button>
       <b-button b-col v-if="!authenticated" @click="logout()">
         Log Out
       </b-button></span>
-      <div class="homeButton">
       <HomeButton />
-      </div>
       </b-row>
       <router-view :auth="auth" :authenticated="authenticated">
       </router-view>
@@ -69,16 +67,20 @@ export default {
 <style>
 #app{
   background-color: green;
-  height: 1340px;
+  height: 100%;
 } 
-.bv-example-row{
-  display: flex;
-  float: center;
-  justify-content: center;
-}
+
 button{
-  color: white;
   margin-top: 15px;
 }
+a{
+  color: white;
+}
+.buttons{
+  display:flex;
+  justify-content: center;
+}
+
+
 
 </style>
