@@ -1,83 +1,61 @@
 <template>
     <div>
-        <h1>Employer Edit job Page</h1>
-            <div class="Post">
-      <form id="app" @submit="onSubmit">
+    <h1>Employer Edit Page</h1>
+  <div class="postPage mx-auto">
+    <div class="EmployerCurrent">
+    </div>
 
+    <div class="Post">
+      <form id="app" @submit="onSubmit">
         <div class="title">
-          <label class="title">Job Title</label>
-          <input placeholder="" class="title" v-model="form.title" type="text" name="title">
-        </div>
-        <div class="pay">
-          <label class="pay">Pay</label>
-          <input class="pay" v-model="form.pay" type="text" name="pay">
-        </div>
-        <div class="area">
-          <label class="area">Area</label>
-          <input class="area" v-model="form.area" type="text" name="area">
+          <label class="jobtitles">Job Title</label>
+          <input class="jobtitle" v-model="form.title" type="text" name="title">
         </div>
         <div class="description">
-          <label class="description">Description</label>
-          <input class="description" v-model="form.description" type="text" name="description">
+          <label class="jobdescriptions">Description</label>
+          <input class="jobdescription" v-model="form.description" type="text" name="description">
         </div>
-        <div>
-
+        <div class="pay">
+          <label class="jobpays">Pay</label>
+          <input class="jobpay" v-model="form.pay" type="text" name="pay">
         </div>
-        <div class="RepostJob">
-          <b-button type="submit">Re-post Job </b-button>
+        <div class="area">
+          <label class="jobareas">Area</label>
+          <input class="jobarea" v-model="form.area" type="text" name="area">
+        </div>
+        <div class="postJob">
+          <b-button v-on:click="fetchPost" type="submit">Re-Post Job </b-button>
         </div>
       </form>
     </div>
-    <!-- <button type="sumbit">Post Job</button> -->
     </div>
+    <!-- <button type="sumbit">Post Job</button> -->
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
-    name: "EmployerEditJobPage",
-    data() {
+  name: "EmployerEditPage",
+  data() {
     return {
-      msg: "Your Post Has Been Added",
+      msg: "You Have Re-Posted",
       // jobs : {title: "", pay: "", area: ""},
       apiURL: "https://protected-forest-50209.herokuapp.com/api/jobs",
       form: {
         title: "",
         pay: "",
-        area: "",
-        description: ""
+        area: ""
       }
     };
   },
-
-  // updateJobs = async id => {
-  //   const response = await fetch("https://protected-forest-50209.herokuapp.com/api/jobs" + id, {
-  //     method: "put",
-  //     headers: new Headers({
-  //       "Content-Type": "application/json"
-  //     }),
-  //     body: JSON.stringify(this.form)
-  //     }).then(resp => {
-  //       console.log("form response", resp);
-  //       if (!resp.ok) {
-  //         if (resp.status >= 400 || resp.status < 500) {
-  //           return resp.json().then(data => {
-  //             const err = {
-  //               errorMessage: data.message
-  //             };
-  //             throw err;
-  //             ballz = true;
-  //           });
-  //         }
-  //         const err = {
-  //           errorMessage: "Blah"
-  //         };
-  //         throw err;
-  //       }
-  //       return resp.json();
-  //     });
-  //   },
   methods: {
+    notify(evt){
+      alert('You fixed a post!')
+    },
     onSubmit(evt) {
       evt.preventDefault();
       return fetch(this.apiURL, {
@@ -107,10 +85,6 @@ export default {
       });
     },
     mounted() {
-      axios.put(this.apiURL).then(response => {
-        console.log(response.data);
-        this.newJob = response.data;
-      })
       axios.post(this.apiURL).then(response => {
         console.log(response.data);
         this.newJob = response.data;
@@ -121,31 +95,113 @@ export default {
 </script>
 
 <style>
-.title{
-  color:white;
-  margin-bottom: 15px;
-  margin-left: 5px;
-}
-.pay{
-  color:white;
-  margin-bottom:15px;
-  margin-left: 5px;
-
-}
-.area{
-  color:white;
-  margin-bottom: 15px;
-  margin-left: 5px;
-}
-.description{
-  margin-left: 5px;
-  margin-bottom: 15px;
-}
-.RepostJob{
+h1{
   display:flex;
   justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: tan;
+  border-radius: 20px;
+  width: 350px;
 }
-h1{
+.title{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  
+}
+.pay{
+  display:flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 15px;
 }
+.area{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.description{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.jobtitle{
+  margin-left: 15px;
+  display: flex;
+  width: 150px;
+}
+.jobpay{
+  margin-left: 15px;
+  display: flex;
+  width: 350px;
+  color:white;
+}
+.jobarea{
+  margin-left: 15px;
+  display: flex;
+  width: 350px;
+}
+.jobdescription{
+  margin-left: 5px;
+  display: flex;
+  width: 250px;
+}
+
+.postJob{
+  display:flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+}
+.EmployerCurrent{
+   display:flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+.jobpays{
+  color:white;
+}
+.jobareas{
+  color:white;
+}
+.jobtitles{
+  color:white;
+}
+.description{
+  color: white;
+}
+input.jobpay{
+  color:black;
+}
+.postPage{
+  background-color: tan;
+  width: 450px;
+  border-radius: 20px;
+}
+form#app{
+  background-color: tan;
+  width: 450px;
+  border-radius: 20px;
+}
+
+
+
+
+
 </style>

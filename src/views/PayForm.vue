@@ -5,11 +5,9 @@
         <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
           <div class="jobContainer">
             <b-card-group deck class="mb-3">
-            <b-card bg-variant="success" text-variant="white" header="Job" class="text-center">
-              <p class="card-text">{{job.title}}</p>
-              <p class="card-text">{{job.pay}}.</p>
-              <p class="card-text">{{job.jobDescription}}.</p>
-              <p class="card-text">{{job.area}} </p>
+            <b-card bg-variant="success" text-variant="white" class="text-center">
+              <p class="card-text">{{job.title}} , {{job.pay}}</p>
+              <p class="card-text">{{job.jobDescription}} , {{job.area}}</p>
             </b-card>
           </b-card-group>
             <div class="requestJob">
@@ -46,6 +44,9 @@ export default {
 </script>
 
 <style scoped>
+.payForm{
+  margin-top: 15px;
+}
 /* .title{
   background-color: lightblue
   

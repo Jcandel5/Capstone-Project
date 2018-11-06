@@ -1,15 +1,15 @@
 <template>
-  <div>
+    <div>
+    <h1>Employer Post Page</h1>
+  <div class="postPage mx-auto">
     <div class="EmployerCurrent">
       <b-button>
         <router-link :to="{ path: 'EmployerCurrentJobPage' }">Your Current Jobs</router-link>
       </b-button>
     </div>
-    <h1>Employer Post Page</h1>
 
     <div class="Post">
       <form id="app" @submit="onSubmit">
-
         <div class="title">
           <label class="jobtitles">Job Title</label>
           <input class="jobtitle" v-model="form.title" type="text" name="title">
@@ -26,13 +26,11 @@
           <label class="jobareas">Area</label>
           <input class="jobarea" v-model="form.area" type="text" name="area">
         </div>
-        <div>
-
-        </div>
         <div class="postJob">
-          <b-button v-on:click="notify" type="submit" >Post Job </b-button>
+          <b-button v-on:click="notify" type="submit">Post Job </b-button>
         </div>
       </form>
+    </div>
     </div>
     <!-- <button type="sumbit">Post Job</button> -->
   </div>
@@ -40,6 +38,9 @@
 
 <script>
 import axios from "axios";
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
   name: "EmployerPostPage",
   data() {
@@ -100,8 +101,14 @@ export default {
 h1{
   display:flex;
   justify-content: center;
+  margin-top: 15px;
   margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
+  background-color: tan;
+  border-radius: 20px;
+  width: 350px;
 }
 .title{
   display:flex;
@@ -114,19 +121,19 @@ h1{
   display:flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 .area{
   display:flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 .description{
   display:flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
 }
 .jobtitle{
   margin-left: 15px;
@@ -152,6 +159,7 @@ h1{
 
 .postJob{
   display:flex;
+  margin-bottom: 15px;
   align-content: center;
   align-items: center;
   align-self: center;
@@ -184,6 +192,16 @@ h1{
 }
 input.jobpay{
   color:black;
+}
+.postPage{
+  background-color: tan;
+  width: 450px;
+  border-radius: 20px;
+}
+form#app{
+  background-color: tan;
+  width: 450px;
+  border-radius: 20px;
 }
 
 
