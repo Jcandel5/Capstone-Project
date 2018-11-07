@@ -1,36 +1,36 @@
 <template>
   <div>
     <h1> Current Jobs</h1>
-    <b-container class="jobContainer">
-      <b-row class="text-center">
         <div v-if="jobs && jobs.length">
           <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
             <b-card-group deck>
-              <b-card bg-variant="success" v-bind:jobs="job" text-variant="white" class="text-center">
-                <b-col class="card-text">{{job.title}} , {{job.pay}}</b-col>
-                <b-col class="card-text">{{job.jobDescription}} , {{job.area}}</b-col>
-                <b-col class="card-text">{{job._id}}</b-col>
+    <b-container class="jobContainer">
+      <b-row class="text-center">
+              <b-card bg-variant="info" v-bind:jobs="job" text-variant="white" class="text-center">
+                <b-col class="card-text"><h4>{{job.title}} {{job.pay}}</h4></b-col>
+                <b-col class="card-text"><h5>{{job.jobDescription}} , {{job.area}}</h5></b-col>
+                <!-- <b-col class="card-text">{{job._id}}</b-col> -->
 
                 <div class="buttons">
-                  <div class="editJob">
+                  <div class="editJob col-6">
                     <b-button>
-                      <router-link :to="{ path: 'EmployerEditJobPage', params: {_id} }">Edit</router-link>
+                      <router-link :to="{ path: 'EmployerEditJobPage', params: {_id} }"><h4>Edit</h4></router-link>
                     </b-button>
                   </div>
-                  <div class="deleteJob">
-                    <b-button v-on:click="deleteJob">
+                  <div class="deleteJob col-6">
+                    <b-button v-on:click="deleteJob"><h4>
                       Delete
-                    </b-button>
+                    </h4></b-button>
                     
                   </div>
                 </div>
               </b-card>
+      </b-row>
+    </b-container>
             </b-card-group>
           </div>
 
         </div>
-      </b-row>
-    </b-container>
   </div>
 </template>
 
@@ -96,48 +96,26 @@ export default {
 </script>
 
 <style>
-
+div.card-body{
+  height: 175px;
+}
 .jobContainer{
-  background-color: blue;
-}
-/* .jobstitle {
-  display: flex;
-  justify-content: left;
-}
-.jobspay {
-  display: flex;
-  justify-content: left;
-}
-.jobsarea {
-  display: flex;
-  justify-content: left;
-}
-div.jobstitle {
   margin-bottom: 15px;
-  background-color: white;
 }
-div.jobspay {
-  margin-bottom: 15px;
-  background-color: white;
-}
-div.jobsarea {
-  margin-bottom: 15px;
-  background-color: white;
-} */
-/* .editJob {
+.editJob {
   display: flex;
-  margin-bottom: 30px;
   justify-content: center;
-  height: 50px;
 }
 .deleteJob {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
-  height: 50px;
-  margin-left: 150px;
-}  */
+} 
+div{
+  color: black;
+}
+
 /* div.card-body{
   width:350px;
 } */
+
 </style>

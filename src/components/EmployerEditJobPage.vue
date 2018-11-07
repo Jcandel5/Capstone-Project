@@ -102,7 +102,7 @@ h1{
   margin-left: auto;
   margin-right: auto;
   color: white;
-  background-color: tan;
+  background-color: #4db1f2;
   border-radius: 20px;
   width: 350px;
 }

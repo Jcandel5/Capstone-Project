@@ -1,14 +1,14 @@
 <template>
     <div>
     <div class="profileButton">
-      <b-button>
-        <router-link :to="{ path: 'EmployerProfilePage' }">Profile</router-link>
+      <b-button class="jobprofile">
+        <router-link :to="{ path: 'EmployerProfilePage' }"><h4>Profile</h4></router-link>
       </b-button>
     </div>
     <h1>Employer Post Page</h1>
   <div class="postPage mx-auto">
     <div class="EmployerCurrent">
-      <b-button>
+      <b-button class="currentjob">
         <router-link :to="{ path: 'EmployerCurrentJobPage' }">Your Current Jobs</router-link>
       </b-button>
     </div>
@@ -32,7 +32,7 @@
           <input class="jobarea" v-model="form.area" type="text" name="area">
         </div>
         <div class="postJob">
-          <b-button v-on:click="notify" type="submit">Post Job </b-button>
+          <b-button class="postjob" v-on:click="notify" type="submit">Post Job </b-button>
         </div>
       </form>
     </div>
@@ -105,64 +105,9 @@ export default {
 
 <style>
 h1{
-  display:flex;
-  justify-content: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  background-color: tan;
-  border-radius: 20px;
-  width: 350px;
+  border-radius: 10px;
+  border:1px solid white;
 }
-.title{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-  
-}
-.pay{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.area{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.description{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.jobtitle{
-  margin-left: 15px;
-  display: flex;
-  width: 150px;
-}
-.jobpay{
-  margin-left: 15px;
-  display: flex;
-  width: 350px;
-  color:white;
-}
-.jobarea{
-  margin-left: 15px;
-  display: flex;
-  width: 350px;
-}
-.jobdescription{
-  margin-left: 5px;
-  display: flex;
-  width: 250px;
-}
-
 .postJob{
   display:flex;
   margin-bottom: 15px;
@@ -173,47 +118,59 @@ h1{
   justify-items: center;
   justify-self: center;
 }
-.EmployerCurrent{
-   display:flex;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  justify-content: center;
-  justify-items: center;
-  justify-self: center;
-  margin-top: 50px;
-  margin-bottom: 15px;
-}
-.jobpays{
-  color:white;
-}
-.jobareas{
-  color:white;
-}
-.jobtitles{
-  color:white;
-}
-.description{
-  color: white;
-}
-input.jobpay{
-  color:black;
-}
 .postPage{
-  background-color: tan;
+  background-color: #4db1d1;
   width: 450px;
   border-radius: 20px;
+  margin-bottom: 50px;
 }
 form#app{
-  background-color: tan;
+  background-color: #4db1d1;
   width: 450px;
-  border-radius: 20px;
 }
 .profileButton{
   display:flex;
   justify-content: center;
 }
-
-
+.jobtitles{
+  color:black;
+}
+.jobdescriptions{
+  color:black;
+  margin-right: 15px;
+}
+.jobpays{
+  color:black;
+}
+.jobareas{
+  color:black;
+}
+input.jobtitle{
+  width:250px;
+  margin-right: 35px;
+}
+input.jobpay{
+  width:250px;
+  margin-bottom: 10px;
+}
+input.jobdescription{
+  width:250px;
+  margin-right: 60px;
+}
+input.jobarea{
+  width:250px;
+  margin-right:5px;
+  margin-bottom: 10px;
+}
+.jobprofile{
+  background-color: #4db1f2;
+  margin-top: 5px;
+}
+.currentjob{
+  background-color: #579cf0;
+}
+.postjob{
+  background-color: #579cf0;
+}
 
 </style>

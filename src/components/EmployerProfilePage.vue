@@ -1,143 +1,84 @@
 <template>
+<div>
+    <div class="title">
+    <h1>Profile Page</h1>
+    </div>
+  <div class="row">
+    <div class="profilePhoto">
+      <h4>Profile Photo</h4>
+      <img src="https://api.valuewins.com/profilePicture/undefined" height="250px" width="250px">
+    </div>
+    <div class="bio">
+     <span><input class="userBio" placeholder="My wife and i just moved in to a house in Highlands Ranch,Colorado and want to help egear youth earn money!"></span>
+    </div>
+    <div class="location">
+      <div class="City">
+        <input class="city" placeholder="Highlands Ranch">
+      </div>
+      <div class="State">
+        <input class="state" placeholder="Colorado">
+      </div>
+      <div class="Address">
+        <input class="address" placeholder="1234 S That Street">
+      </div>
+    </div>
     <div>
-        <h1>Profile Page</h1>
-        <template>
- <div class="SignUp">
-   <form
- id="app"
- @submit="checkForm"
- action="https://vuejs.org/"
- method="post"
->
-
- <p>
-   <label for="Firstname">First Name</label>
-   <input
-     id="Firstname"
-     v-model="Firstname"
-     type="text"
-     name="Firstname"
-   >
- </p>
- <p>
-   <label for="Lastname">Last Name</label>
-   <input
-     id="Lastname"
-     v-model="Lastname"
-     type="text"
-     name="Lastname"
-   >
- </p>
- <p>
-   <label for="Bio">Bio</label>
-   <input
-     id="Bio"
-     v-model="Bio"
-     type="text"
-     name="Bio"
-   >
- </p>
-
- <p>
-   <label for="age">Age</label>
-   <input
-     id="age"
-     v-model="age"
-     type="number"
-     name="age"
-     min="0">
- </p>
-
- <p>
-   <label for="state">State</label>
-   <select
-     id="state"
-     v-model="state"
-     name="state"
-   >
-     <option>AL</option>
-     <option>AK</option>
-     <option>AZ</option>
-     <option>AR</option>
-     <option>CA</option>
-     <option>CO</option>
-     <option>CT</option>
-     <option>DE</option>
-     <option>FL</option>
-     <option>GA</option>
-     <option>HI</option>
-     <option>ID</option>
-     <option>IL</option>
-     <option>IN</option>
-     <option>IA</option>
-     <option>KS</option>
-     <option>KY</option>
-     <option>LA</option>
-     <option>ME</option>
-     <option>MD</option>
-     <option>MA</option>
-     <option>MI</option>
-     <option>MN</option>
-     <option>MS</option>
-     <option>MO</option>
-     <option>MT</option>
-     <option>NE</option>
-     <option>NV</option>
-     <option>NH</option>
-     <option>NJ</option>
-     <option>NM</option>
-     <option>NY</option>
-     <option>NC</option>
-     <option>ND</option>
-     <option>OH</option>
-     <option>OK</option>
-     <option>OR</option>
-     <option>PA</option>
-     <option>RI</option>
-     <option>SC</option>
-     <option>SD</option>
-     <option>TN</option>
-     <option>TX</option>
-     <option>UT</option>
-     <option>VT</option>
-     <option>VA</option>
-     <option>WV</option>
-     <option>WI</option>
-     <option>WY</option>
-   </select>
- </p>
- <p>
-   <label for="Address">Address</label>
-   <input
-     id="Address"
-     v-model="Address"
-     type="text"
-     name="Address"
-   >
- </p>
-
- <p>
-   <input
-     type="submit"
-     value="Submit"
-   >
- </p>
-
-</form>
- </div>
-</template>
-
-
 
     </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import BootstrapVue from 'bootstrap-vue'
 export default {
     name: 'EmployerProfilePage'
 }
 </script>
 
 <style>
-
+p{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:15px;
+}
+label{
+  margin-right: 15px;
+}
+div.SignUp{
+  display:flex;
+  align-content: center;
+  justify-content: center;
+}
+.firstName{
+  color:white;
+}
+button.update{
+  display:flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+}
+.profilePhoto{
+  color:white;
+}
+.userBio{
+  height: 250px;
+  width: 250px;
+  margin-top: 36px;
+  margin-left: 50px;
+}
+.location{
+  margin-top: 80px;
+  margin-left: 50px;
+}
+.city{
+  margin-bottom: 30px;
+}
+.state{
+  margin-bottom: 30px;
+}
 </style>

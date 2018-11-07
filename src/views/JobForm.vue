@@ -1,25 +1,30 @@
 <template>
+<div>
   <div class="jobsForm">
     <h1>Jobs Form</h1>
+  </div>
       <div v-if="jobs && jobs.length">
         <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
-          <div class="jobContainer">
-            <b-card-group deck class="mb-1">
-            <b-card bg-variant="success" text-variant="white" class="text-center">
-             <p class="card-text">{{job.title}} , {{job.pay}}</p>
-              <p class="card-text">{{job.jobDescription}} , {{job.area}}</p>
-            </b-card>
-          </b-card-group>
-            <div class="requestJob">
-              <b-button class="requestJob">Request Job</b-button>
+            <b-card-group deck>
+          <b-container class="jobContainer">
+            <b-row class="text-center">
+            <b-card bg-variant="info" text-variant="white" class="text-center">
+             <b-col class="card-text"><h4>{{job.title}}  {{job.pay}}</h4></b-col>
+              <b-col class="card-location"><h5>{{job.jobDescription}}  {{job.area}}</h5></b-col>
+            <div class="buttons">
+              <b-button class="requesttheJob">Request Job</b-button>
             </div>
-          </div>
-        </div>
+            </b-card>
+            </b-row>
+          </b-container>
+          </b-card-group>
       </div>
     </div>
+  </div>
 </template>
 <script>
 import axios from 'axios'
+import BootstrapVue from 'bootstrap-vue';
 export default {
   name: "JobForm",
   data () {
@@ -39,44 +44,12 @@ export default {
 </script>
 
 <style>
-h1{
-  display:flex;
-  justify-content: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  color: white;
-  background-color: tan;
-  border-radius: 20px;
-  width: 450px;
-}
-.jobtitle{
-  display:flex;
-  justify-content: left;
-  background-color: white;
-  margin-bottom: 15px;
-}
-.jobpay{
-  display:flex;
-  justify-content: left;
-  background-color: white;
-  margin-bottom: 15px;
-}
-.jobarea{
-  display:flex;
-  justify-content: left;
-  background-color: white;
-  margin-bottom: 15px;
-}
-.requestJob{
-  margin-bottom: 5px;
-  margin-top: 5px;
-  display:flex;
-  justify-content: center;
-}
+
 /* .jobContainer{
   border: 5px solid black;
 } */
+div.card.text-center{
+  margin-top:15px;
+}
 </style>
 

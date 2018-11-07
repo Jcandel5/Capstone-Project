@@ -1,19 +1,23 @@
 <template>
+<div>
   <div class="payForm">
     <h1>Pay Form</h1>
+    </div>
       <div v-if="jobs && jobs.length">
         <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
-          <div class="jobContainer">
-            <b-card-group deck class="mb-3">
-            <b-card bg-variant="success" text-variant="white" class="text-center">
-              <p class="card-text">{{job.pay}} , {{job.title}}</p>
-              <p class="card-text">{{job.jobDescription}} , {{job.area}}</p>
-            </b-card>
-          </b-card-group>
+            <b-card-group deck>
+          <b-container class="payContainer">
+            <b-row class="text-center">
+            <b-card bg-variant="info" text-variant="white" class="text-center">
+              <b-col class="card-text"><h4>{{job.pay}}  {{job.title}}</h4></b-col>
+              <b-col class="card-text"><h5>{{job.jobDescription}}  {{job.area}}</h5></b-col>
             <div class="requestJob">
               <b-button class="requestJob">Request Job</b-button>
             </div>
-          </div>
+            </b-card>
+            </b-row>
+          </b-container>
+          </b-card-group>
         </div>
       </div>
     </div>
@@ -21,6 +25,7 @@
 
 <script>
 import axios from 'axios'
+import BootstrapVue from 'bootstrap-vue';
 export default {
   name: "PayForm",
   data () {
@@ -45,7 +50,7 @@ export default {
 
 <style scoped>
 .payForm{
-  margin-top: 15px;
+  margin-top: 25px;
 }
 /* .title{
   background-color: lightblue

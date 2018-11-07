@@ -2,17 +2,17 @@
     <div class="jobForm mx-auto">
         <div class=CurrentJobs>
             <b-button class="EmoloyeeCurrentJobPage">
-                <router-link :to="{ path: 'EmoloyeeCurrentJobPage' }">Your Current Jobs</router-link>
+                <router-link class="currentjobs" :to="{ path: 'EmoloyeeCurrentJobPage' }"><h2>Your Current Jobs</h2></router-link>
             </b-button>
         </div>
         <div class=jobSearch>
             <b-button id='job'>
-                <router-link :to="{ path: 'JobForm' }">Jobs</router-link>
+                <router-link class="jobbutton" :to="{ path: 'JobForm' }"><h2>Jobs</h2></router-link>
             </b-button>
         </div>
         <div class="paySearch">
             <b-button id='pay'>
-                <router-link :to="{ path: 'PayForm' }">Pay</router-link>
+                <router-link class="jobspays" :to="{ path: 'PayForm' }"><h2>Pay</h2></router-link>
             </b-button>
         </div>
     </div>
@@ -32,6 +32,7 @@ export default {
     display:flex;
     justify-content: center;
     margin-bottom: 50px;
+    
 }
 .paySearch{
     display:flex;
@@ -45,18 +46,25 @@ export default {
 }
 .EmoloyeeCurrentJobPage{
     margin-top: 15px;
+    border-radius: 10px;
 }
 .jobForm{
-    background-color: tan;
+    background-color: #4db1f2;
     width: 350px;
     height: auto;
-    border-radius: 20px;
+    border-radius: 25px;
 }
 button#pay{
     margin-bottom: 5px;
 }
 div.row.buttons{
     margin-bottom: 15px;
+}
+button#job{
+    border-radius: 15px;
+}
+button#pay{
+     border-radius: 15px;
 }
 
 </style>
