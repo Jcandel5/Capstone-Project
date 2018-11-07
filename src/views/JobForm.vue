@@ -6,7 +6,7 @@
           <div class="jobContainer">
             <b-card-group deck class="mb-1">
             <b-card bg-variant="success" text-variant="white" class="text-center">
-             <p class="card-text">{{job.pay}} , {{job.title}}</p>
+             <p class="card-text">{{job.title}} , {{job.pay}}</p>
               <p class="card-text">{{job.jobDescription}} , {{job.area}}</p>
             </b-card>
           </b-card-group>

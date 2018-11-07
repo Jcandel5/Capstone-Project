@@ -1,33 +1,42 @@
 <template>
   <div>
     <h1> Current Jobs</h1>
-    <div v-if="jobs && jobs.length">
-      <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
-        <div class="jobContainer">
-          <b-card-group deck class="mb-3">
-            <b-card bg-variant="success" text-variant="white" class="text-center"> 
-              <p class="card-text">{{job.title}} , {{job.pay}}</p>
-              <p class="card-text">{{job.jobDescription}} , {{job.area}}</p>
-            </b-card>
-          </b-card-group>
-          <div class="editJob">
-            <b-button>
-              <router-link :to="{ path: 'EmployerEditJobPage' }">Edit</router-link>
-            </b-button>
-          <div class="deleteJob">
-            <b-button v-on:click="deleteJob">
-              Delete
-            </b-button>
+    <b-container class="jobContainer">
+      <b-row class="text-center">
+        <div v-if="jobs && jobs.length">
+          <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
+            <b-card-group deck>
+              <b-card bg-variant="success" v-bind:jobs="job" text-variant="white" class="text-center">
+                <b-col class="card-text">{{job.title}} , {{job.pay}}</b-col>
+                <b-col class="card-text">{{job.jobDescription}} , {{job.area}}</b-col>
+                <b-col class="card-text">{{job._id}}</b-col>
+
+                <div class="buttons">
+                  <div class="editJob">
+                    <b-button>
+                      <router-link :to="{ path: 'EmployerEditJobPage', params: {_id} }">Edit</router-link>
+                    </b-button>
+                  </div>
+                  <div class="deleteJob">
+                    <b-button v-on:click="deleteJob">
+                      Delete
+                    </b-button>
+                    
+                  </div>
+                </div>
+              </b-card>
+            </b-card-group>
           </div>
-          </div>
+
         </div>
-      </div>
-    </div>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import BootstrapVue from 'bootstrap-vue'
 export default {
   name: "EmployerCurrentJobPage",
   data() {
@@ -87,7 +96,11 @@ export default {
 </script>
 
 <style>
-.jobstitle {
+
+.jobContainer{
+  background-color: blue;
+}
+/* .jobstitle {
   display: flex;
   justify-content: left;
 }
@@ -110,8 +123,8 @@ div.jobspay {
 div.jobsarea {
   margin-bottom: 15px;
   background-color: white;
-}
-.editJob {
+} */
+/* .editJob {
   display: flex;
   margin-bottom: 30px;
   justify-content: center;
@@ -123,5 +136,8 @@ div.jobsarea {
   margin-bottom: 30px;
   height: 50px;
   margin-left: 150px;
-}
+}  */
+/* div.card-body{
+  width:350px;
+} */
 </style>

@@ -57,12 +57,19 @@ export default new Router({
       name: 'EmoloyeeCurrentJobPage',
 
       component: () => import('./components/EmoloyeeCurrentJobPage.vue')
-    },{
+    },
+    {
       path: '/EmployerCurrentJobPage/:employerId/edit',
       component: require('./components/EmployerEditJobPage.vue'),
       props: true,
 
       component: () => import('./components/EmployerEditJobPage.vue')
+    },
+    {
+      path: '/EmployerProfilePage',
+      name: 'EmployerProfilePage',
+
+      component: () => import('./components/EmployerProfilePage.vue')
     },
 
 

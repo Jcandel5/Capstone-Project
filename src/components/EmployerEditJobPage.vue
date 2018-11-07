@@ -1,11 +1,10 @@
 <template>
     <div>
     <h1>Employer Edit Page</h1>
-  <div class="postPage mx-auto">
+  <div class="editPage mx-auto">
     <div class="EmployerCurrent">
     </div>
-
-    <div class="Post">
+    <div class="Edit">
       <form id="app" @submit="onSubmit">
         <div class="title">
           <label class="jobtitles">Job Title</label>
@@ -23,13 +22,12 @@
           <label class="jobareas">Area</label>
           <input class="jobarea" v-model="form.area" type="text" name="area">
         </div>
-        <div class="postJob">
-          <b-button v-on:click="fetchPost" type="submit">Re-Post Job </b-button>
+        <div class="repostJob">
+          <b-button type="submit">Re-Post Job </b-button>
         </div>
       </form>
     </div>
     </div>
-    <!-- <button type="sumbit">Post Job</button> -->
   </div>
 </template>
 
@@ -39,6 +37,7 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
+  // props: [job],
   name: "EmployerEditPage",
   data() {
     return {
@@ -154,7 +153,7 @@ h1{
   width: 250px;
 }
 
-.postJob{
+.repostJob{
   display:flex;
   align-content: center;
   align-items: center;
@@ -189,7 +188,7 @@ h1{
 input.jobpay{
   color:black;
 }
-.postPage{
+.editPage{
   background-color: tan;
   width: 450px;
   border-radius: 20px;

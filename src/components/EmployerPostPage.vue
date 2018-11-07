@@ -1,5 +1,10 @@
 <template>
     <div>
+    <div class="profileButton">
+      <b-button>
+        <router-link :to="{ path: 'EmployerProfilePage' }">Profile</router-link>
+      </b-button>
+    </div>
     <h1>Employer Post Page</h1>
   <div class="postPage mx-auto">
     <div class="EmployerCurrent">
@@ -46,12 +51,13 @@ export default {
   data() {
     return {
       msg: "Your Post Has Been Added",
-      // jobs : {title: "", pay: "", area: ""},
+      jobs : {title: "", pay: "", area: ""},
       apiURL: "https://protected-forest-50209.herokuapp.com/api/jobs",
       form: {
         title: "",
         pay: "",
-        area: ""
+        area: "",
+        id: ""
       }
     };
   },
@@ -203,7 +209,10 @@ form#app{
   width: 450px;
   border-radius: 20px;
 }
-
+.profileButton{
+  display:flex;
+  justify-content: center;
+}
 
 
 
