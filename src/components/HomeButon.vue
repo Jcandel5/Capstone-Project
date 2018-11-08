@@ -13,5 +13,6 @@ export default {
 <style>
 .HomeButton{
     background-color: #4db1f2;
+    border: 1px solid white;
 }
 </style>

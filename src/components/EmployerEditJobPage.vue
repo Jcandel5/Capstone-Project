@@ -105,6 +105,7 @@ h1{
   background-color: #4db1f2;
   border-radius: 20px;
   width: 350px;
+  text-shadow: 2px 2px black;
 }
 .title{
   display:flex;
@@ -189,12 +190,12 @@ input.jobpay{
   color:black;
 }
 .editPage{
-  background-color: tan;
+  background-color: #4db1f2;
   width: 450px;
   border-radius: 20px;
 }
 form#app{
-  background-color: tan;
+  background-color: #4db1f2;
   width: 450px;
   border-radius: 20px;
 }

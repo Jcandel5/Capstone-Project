@@ -1,70 +1,97 @@
 <template>
-<div>
-  <div class="payForm">
-    <h1>Pay Form</h1>
-    </div>
-      <div v-if="jobs && jobs.length">
-        <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
-            <b-card-group deck>
-          <b-container class="payContainer">
-            <b-row class="text-center">
-            <b-card bg-variant="info" text-variant="white" class="text-center">
-              <b-col class="card-text"><h4>{{job.pay}}  {{job.title}}</h4></b-col>
-              <b-col class="card-text"><h5>{{job.jobDescription}}  {{job.area}}</h5></b-col>
-            <div class="requestJob">
+  <div>
+
+<h1>Pay Form</h1>
+
+    <b-container class="jobContainer">
+      <div class="jobs" v-if="jobs && jobs.length" v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
+        <b-row class="text-center">
+          <b-card bg-variant="info" text-variant="white" class="text-center">
+            <b-col class="card-title">
+              <h4>{{job.pay}} {{job.title}}</h4>
+            </b-col>
+            <b-col class="card-location">
+              <h5>{{job.jobDescription}} {{job.area}}</h5>
+            </b-col>
+
+            <div class="buttons">
               <b-button class="requestJob">Request Job</b-button>
             </div>
-            </b-card>
-            </b-row>
-          </b-container>
-          </b-card-group>
-        </div>
+          </b-card>
+        </b-row>
       </div>
-    </div>
+    </b-container>
+  </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 import BootstrapVue from 'bootstrap-vue';
 export default {
   name: "PayForm",
-  data () {
+  data() {
     return {
-      jobs: [], 
+      jobs: [],
       apiURL: "https://protected-forest-50209.herokuapp.com/api/jobs"
-    }
+    };
   },
-  mounted () {
-    axios.get(this.apiURL)
-    .then(response => {
-      console.log(response.data)
-      this.jobs = response.data
-    })
-    
+  mounted() {
+    axios.get(this.apiURL).then(response => {
+      console.log(response.data);
+      this.jobs = response.data;
+    });
   }
-
-
-
-}
+};
 </script>
 
-<style scoped>
-.payForm{
-  margin-top: 25px;
-}
-/* .title{
-  background-color: lightblue
-  
-}
-.area{
-  background-color: coral
-}
-.pay{
-  background-color: indianred
+<style>
+div.card-body{
+  height: 290px;
+  margin: 10px;
 }
 .jobContainer{
-  margin-bottom: 5px;
-  border: 2px solid black;
-} */
-</style>
+  margin-bottom: 15px;
+}
+.editJob {
+  display: flex;
+  justify-content: center;
+}
+.deleteJob {
+  display: flex;
+  justify-content: center;
+} 
 
+.jobContainer{
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:100%;
+}
+div.card-deck{
+  width:150px;
+}
+.jobs{
+  display:flex;
+  align-content: center;
+  width:350px;
+  height: 300px;
+}
+/* div.card-body{
+  width:350px;
+} */
+div.card.text-center{
+  margin: 20px;
+  height: 250px;
+}
+div.row.text-center{
+  height:300px;
+}
+.requestJob{
+  margin: 10px;
+}
+h1{
+  border: 1px solid white;
+}
+
+</style>

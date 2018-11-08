@@ -1,25 +1,26 @@
 <template>
-<div>
-  <div class="jobsForm">
+  <div>
     <h1>Jobs Form</h1>
-  </div>
-      <div v-if="jobs && jobs.length">
-        <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
-            <b-card-group deck>
-          <b-container class="jobContainer">
-            <b-row class="text-center">
-            <b-card bg-variant="info" text-variant="white" class="text-center">
-             <b-col class="card-text"><h4>{{job.title}}  {{job.pay}}</h4></b-col>
-              <b-col class="card-location"><h5>{{job.jobDescription}}  {{job.area}}</h5></b-col>
+
+
+    <b-container class="jobContainer">
+
+      <div class="jobs" v-if="jobs && jobs.length" v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
+        <b-row class="text-center">
+          <b-card bg-variant="info" text-variant="white" class="text-center">
+            <b-col class="card-text">
+              <h4>{{job.title}} {{job.pay}}</h4>
+            </b-col>
+            <b-col class="card-location">
+              <h5>{{job.jobDescription}} {{job.area}}</h5>
+            </b-col>
             <div class="buttons">
               <b-button class="requesttheJob">Request Job</b-button>
             </div>
-            </b-card>
-            </b-row>
-          </b-container>
-          </b-card-group>
+          </b-card>
+        </b-row>
       </div>
-    </div>
+    </b-container>
   </div>
 </template>
 <script>
@@ -44,12 +45,59 @@ export default {
 </script>
 
 <style>
-
-/* .jobContainer{
-  border: 5px solid black;
-} */
+div.card-body{
+  height: 290px;
+  margin: 10px;
+}
+.jobContainer{
+  margin-bottom: 15px;
+}
+.editJob {
+  display: flex;
+  justify-content: center;
+}
+.deleteJob {
+  display: flex;
+  justify-content: center;
+} 
+.requesttheJob{
+  box-shadow: 3.5px 3.5px 2.5px black;
+  background-color: #4db1f2;
+}
+div.card-body{
+  border: 3px solid white;
+  border-radius: 15px;
+}
+h5{
+  text-shadow: 2px 2px black;
+}
+h4{
+  text-shadow: 2px 2px black;
+}
+.jobContainer{
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:100%;
+}
+.jobs{
+  display:flex;
+  align-content: center;
+  width:350px;
+  height: 300px;
+}
 div.card.text-center{
-  margin-top:15px;
+  margin: 20px;
+  height: 250px;
+}
+
+.requestJob{
+  margin: 10px;
+}
+
+h1{
+  border: 1px solid white;
 }
 </style>
 

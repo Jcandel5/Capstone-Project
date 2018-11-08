@@ -1,27 +1,27 @@
 <template>
   <div>
-    <div class="headtitle mx-auto">
+
     <h1> Current Jobs</h1>
-    </div>
-    <div v-if="jobs && jobs.length">
-      <div v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
-          <b-card-group deck>
-        <b-container class="jobContainer">
-          <b-row class="text-center">
-            <b-card bg-variant="info" text-variant="white"  class="text-center">
-              <b-col class="card-title"><h4>{{job.title}}  {{job.pay}}</h4></b-col>
-              <b-col class="card-location"><h5>{{job.jobDescription}} {{job.area}}</h5></b-col>
-          <div class="buttons">
-              <b-button class="requestJob">Request Job</b-button>
+
+    <b-container class="jobContainer">
+      <div class="jobs" v-if="jobs && jobs.length" v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
+        <b-row class="text-center">
+          <b-card bg-variant="info" text-variant="white" class="text-center">
+            <b-col class="card-title">
+              <h4>{{job.title}} {{job.pay}}</h4>
+            </b-col>
+            <b-col class="card-location">
+              <h5>{{job.jobDescription}} {{job.area}}</h5>
+            </b-col>
+
+            <div class="buttons">
               <b-button class="collectMoney">Collect Money</b-button>
-          </div>
-            </b-card>
-          </b-row>
-          </b-container>
-          </b-card-group>
-        </div>
+            </div>
+          </b-card>
+        </b-row>
       </div>
-    </div>
+    </b-container>
+  </div>
 </template>
 
 <script>
@@ -45,40 +45,56 @@ export default {
 </script>
 
 <style>
-h1{
-  width:450px;
+div.card-body{
+  height: 290px;
+  margin: 10px;
 }
-.headtitle{
+.jobContainer{
+  margin-bottom: 15px;
+}
+.editJob {
+  display: flex;
+  justify-content: center;
+}
+.deleteJob {
+  display: flex;
+  justify-content: center;
+} 
+
+.jobContainer{
   display:flex;
   justify-content: center;
-  color: white;
-  background-color: #4db1f2;
-  border-radius: 20px;
-  width: 450px;
-  margin-bottom: 15px;
-  margin-top: 25px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:100%;
+}
+div.card-deck{
+  width:150px;
+}
+.jobs{
+  display:flex;
+  align-content: center;
+  width:350px;
+  height: 300px;
+}
+/* div.card-body{
+  width:350px;
+} */
+div.card.text-center{
+  margin: 20px;
+  height: 250px;
+}
+div.row.text-center{
+  height:300px;
 }
 .requestJob{
-  margin-bottom: 5px;
-  height: 50px;
-  margin-top: 15px;
-  margin-right: 150px;
+  margin: 10px;
 }
 .collectMoney{
-  margin-bottom: 5px;
-  height: 50px;
+  margin: 10px;
 }
-.card-title{
-  color:black;
-}
-.card-location{
-  color:black;
-}
-div.card-body{
-  padding-bottom:15px;
-}
-div.card.text-center{
-  margin-top:15px;
+h1{
+  border: 1px solid white;
 }
 
 </style>

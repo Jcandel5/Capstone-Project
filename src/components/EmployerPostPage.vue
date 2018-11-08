@@ -168,9 +168,19 @@ input.jobarea{
 }
 .currentjob{
   background-color: #579cf0;
+  text-shadow: 1px 1px black;
 }
 .postjob{
   background-color: #579cf0;
+  text-shadow: 1px 1px black;
 }
-
+button.jobprofile{
+  border: 1px solid white;
+}
+.currentjob{
+  border: 1px solid white;
+}
+.postjob{
+  border: 1px solid white;
+}
 </style>

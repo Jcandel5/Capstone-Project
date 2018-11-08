@@ -66,7 +66,7 @@ export default {
 
 <style>
 #app{
-  background-color: #2f445b;
+  background-color:#2a2a2c;
   height: 100%;
 } 
 
@@ -83,10 +83,12 @@ a{
 .login{
   background-color: #4db1f2;
   margin-right: 15px;
+  border: 1px solid white;
 }
 .logout{
   background-color: #4db1f2;
   margin-right: 15px;
+  border: 1px solid white;
 }
 h5{
   margin-top: 5px;

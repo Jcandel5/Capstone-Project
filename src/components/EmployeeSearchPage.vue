@@ -66,5 +66,14 @@ button#job{
 button#pay{
      border-radius: 15px;
 }
+.currentjobs{
+    text-shadow: 1px 1px black;
+}
+.jobbutton{
+    text-shadow: 1px 1px black;
+}
+.jobspays{
+    text-shadow: 1px 1px black;
+}
 
 </style>
