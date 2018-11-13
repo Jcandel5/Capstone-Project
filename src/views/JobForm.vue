@@ -1,10 +1,7 @@
 <template>
   <div>
     <h1>Jobs Form</h1>
-
-
     <b-container class="jobContainer">
-
       <div class="jobs" v-if="jobs && jobs.length" v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
         <b-row class="text-center">
           <b-card bg-variant="info" text-variant="white" class="text-center">
@@ -23,6 +20,8 @@
     </b-container>
   </div>
 </template>
+
+
 <script>
 import axios from 'axios'
 import BootstrapVue from 'bootstrap-vue';

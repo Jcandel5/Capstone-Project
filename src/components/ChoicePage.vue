@@ -31,7 +31,6 @@
     </div>
 </template>
 
-
 <script>
 import BootstrapVue from 'bootstrap-vue';
 export default {

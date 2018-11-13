@@ -1,43 +1,36 @@
 <template>
   <div>
     <h1> Current Jobs</h1>
-
     <b-container class="jobContainer">
       <div class="jobs" v-if="jobs && jobs.length" v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
-          
-            <b-row class="row">
-              <b-card bg-variant="info" v-bind:jobs="job" text-variant="white" class="text-center">
-                <b-col class="card-text">
-                  <h4><u>{{job.title}} - {{job.pay}}</u></h4>
-                </b-col>
-                <b-col class="card-text">
-                  <h5>{{job.jobDescription}} - {{job.area}}</h5>
-                  <h6 class="viewHidden">{{job._id}}</h6>
-                </b-col>
-                <!-- <b-col class="card-text">{{job._id}}</b-col> -->
-
-                <div class="buttons">
-                  <div class="editJob col-6">
-                    <b-button class="editButton">
-                      <router-link :to="{ path: 'EmployerEditJobPage', params: {_id} }">
-                        <h4>Edit</h4>
-                      </router-link>
-                    </b-button>
-                  </div>
-                  <div class="deleteJob col-6">
-                    <b-button class="deleteButton" @click="deleteJob(job)">
-                      <h4>
-                        Delete
-                      </h4>
-                    </b-button>
-
-                  </div>
-                </div>
-              </b-card>
-            </b-row>
-          
-        </div>
-
+        <b-row class="row">
+          <b-card bg-variant="info" v-bind:jobs="job" text-variant="white" class="text-center">
+            <b-col class="card-text">
+              <h4><u>{{job.title}} - {{job.pay}}</u></h4>
+            </b-col>
+            <b-col class="card-text">
+              <h5>{{job.jobDescription}} - {{job.area}}</h5>
+              <h6 class="viewHidden">{{job._id}}</h6>
+            </b-col>
+            <div class="buttons">
+              <div class="editJob col-6">
+                <b-button class="editButton">
+                  <router-link :to="{ path: 'EmployerEditJobPage', params: {_id} }">
+                    <h4>Edit</h4>
+                  </router-link>
+                </b-button>
+              </div>
+              <div class="deleteJob col-6">
+                <b-button class="deleteButton" @click="deleteJob(job)">
+                  <h4>
+                    Delete
+                  </h4>
+                </b-button>
+              </div>
+            </div>
+          </b-card>
+        </b-row>
+      </div>
     </b-container>
   </div>
 </template>
@@ -73,7 +66,6 @@ export default {
     });
   }
   }
-
 </script>
 
 <style>

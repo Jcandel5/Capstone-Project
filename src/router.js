@@ -71,9 +71,5 @@ export default new Router({
 
       component: () => import('./components/EmployerProfilePage.vue')
     },
-
-
-
-
   ]
 })

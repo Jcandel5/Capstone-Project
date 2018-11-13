@@ -1,8 +1,6 @@
 <template>
   <div>
-
-<h1>Pay Form</h1>
-
+    <h1>Pay Form</h1>
     <b-container class="jobContainer">
       <div class="jobs" v-if="jobs && jobs.length" v-for="(job, index)  in jobs" v-bind:key='"job" + index' :job='job'>
         <b-row class="text-center">
@@ -13,7 +11,6 @@
             <b-col class="card-location">
               <h5>{{job.jobDescription}} {{job.area}}</h5>
             </b-col>
-
             <div class="buttons">
               <b-button class="requestJob">Request Job</b-button>
             </div>

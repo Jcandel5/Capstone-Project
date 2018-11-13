@@ -3,20 +3,27 @@
     <Home />
     <b-container class="bv-example-row" :auth="auth" :authenticated="authenticated">
       <b-row class="buttons">
-      <span><b-button class="login" b-col v-if="!authenticated" @click="login()"><h5>
-        Log In
-      </h5></b-button>
-      <b-button class="logout" b-col v-if="!authenticated" @click="logout()"><h5>
-        Log Out
-      </h5></b-button></span>
-      <HomeButton />
+        <span>
+          <b-button class="login" b-col v-if="!authenticated" @click="login()">
+            <h5>
+              Log In
+            </h5>
+          </b-button>
+          <b-button class="logout" b-col v-if="!authenticated" @click="logout()">
+            <h5>
+              Log Out
+            </h5>
+          </b-button>
+        </span>
+        <HomeButton />
       </b-row>
       <router-view :auth="auth" :authenticated="authenticated">
       </router-view>
     </b-container>
   </div>
-
 </template>
+
+
 <script>
 import PayForm from './views/PayForm.vue'
 import JobForm from './views/JobForm.vue'

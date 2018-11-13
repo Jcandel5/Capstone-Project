@@ -1,32 +1,32 @@
 <template>
-    <div>
+  <div>
     <h1>Employer Edit Page</h1>
-  <div class="editPage mx-auto">
-    <div class="EmployerCurrent">
-    </div>
-    <div class="Edit">
-      <form id="app" @submit="onSubmit">
-        <div class="title">
-          <label class="jobtitles">Job Title</label>
-          <input class="jobtitle" v-model="form.title" type="text" name="title">
-        </div>
-        <div class="description">
-          <label class="jobdescriptions">Description</label>
-          <input class="jobdescription" v-model="form.description" type="text" name="description">
-        </div>
-        <div class="pay">
-          <label class="jobpays">Pay</label>
-          <input class="jobpay" v-model="form.pay" type="text" name="pay">
-        </div>
-        <div class="area">
-          <label class="jobareas">Area</label>
-          <input class="jobarea" v-model="form.area" type="text" name="area">
-        </div>
-        <div class="repostJob">
-          <b-button type="submit">Re-Post Job </b-button>
-        </div>
-      </form>
-    </div>
+    <div class="editPage mx-auto">
+      <div class="EmployerCurrent">
+      </div>
+      <div class="Edit">
+        <form id="app" @submit="onSubmit">
+          <div class="title">
+            <label class="jobtitles">Job Title</label>
+            <input class="jobtitle" v-model="form.title" type="text" name="title">
+          </div>
+          <div class="description">
+            <label class="jobdescriptions">Description</label>
+            <input class="jobdescription" v-model="form.description" type="text" name="description">
+          </div>
+          <div class="pay">
+            <label class="jobpays">Pay</label>
+            <input class="jobpay" v-model="form.pay" type="text" name="pay">
+          </div>
+          <div class="area">
+            <label class="jobareas">Area</label>
+            <input class="jobarea" v-model="form.area" type="text" name="area">
+          </div>
+          <div class="repostJob">
+            <b-button type="submit">Re-Post Job </b-button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </template>
@@ -37,12 +37,10 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default {
-  // props: [job],
   name: "EmployerEditPage",
   data() {
     return {
       msg: "You Have Re-Posted",
-      // jobs : {title: "", pay: "", area: ""},
       apiURL: "https://protected-forest-50209.herokuapp.com/api/jobs",
       form: {
         title: "",

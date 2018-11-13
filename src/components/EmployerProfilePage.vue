@@ -1,30 +1,29 @@
 <template>
-<div>
+  <div>
     <div class="title">
-    <h1>Profile Page</h1>
+      <h1>Profile Page</h1>
     </div>
-  <div class="row">
-    <div class="profilePhoto">
-      <h4>Profile Photo</h4>
-      <img src="https://api.valuewins.com/profilePicture/undefined" height="250px" width="250px">
-    </div>
-    <div class="bio">
-     <span><input class="userBio" placeholder="My wife and i just moved in to a house in Highlands Ranch,Colorado and want to help egear youth earn money!"></span>
-    </div>
-    <div class="location">
-      <div class="City">
-        <input class="city" placeholder="Highlands Ranch">
+    <div class="row">
+      <div class="profilePhoto">
+        <h4>Profile Photo</h4>
+        <img src="https://api.valuewins.com/profilePicture/undefined" height="250px" width="250px">
       </div>
-      <div class="State">
-        <input class="state" placeholder="Colorado">
+      <div class="bio">
+        <span><input class="userBio" placeholder="My wife and i just moved in to a house in Highlands Ranch,Colorado and want to help egear youth earn money!"></span>
       </div>
-      <div class="Address">
-        <input class="address" placeholder="1234 S That Street">
+      <div class="location">
+        <div class="City">
+          <input class="city" placeholder="Highlands Ranch">
+        </div>
+        <div class="State">
+          <input class="state" placeholder="Colorado">
+        </div>
+        <div class="Address">
+          <input class="address" placeholder="1234 S That Street">
+        </div>
       </div>
-    </div>
-    <div>
-
-    </div>
+      <div>
+      </div>
     </div>
   </div>
 </template>

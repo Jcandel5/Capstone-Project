@@ -1,43 +1,43 @@
 <template>
-    <div>
+  <div>
     <div class="profileButton">
       <b-button class="jobprofile">
-        <router-link :to="{ path: 'EmployerProfilePage' }"><h4>Profile</h4></router-link>
+        <router-link :to="{ path: 'EmployerProfilePage' }">
+          <h4>Profile</h4>
+        </router-link>
       </b-button>
     </div>
     <h1>Employer Post Page</h1>
-  <div class="postPage mx-auto">
-    <div class="EmployerCurrent">
-      <b-button class="currentjob">
-        <router-link :to="{ path: 'EmployerCurrentJobPage' }">Your Current Jobs</router-link>
-      </b-button>
+    <div class="postPage mx-auto">
+      <div class="EmployerCurrent">
+        <b-button class="currentjob">
+          <router-link :to="{ path: 'EmployerCurrentJobPage' }">Your Current Jobs</router-link>
+        </b-button>
+      </div>
+      <div class="Post">
+        <form id="app" @submit="onSubmit">
+          <div class="title">
+            <label class="jobtitles">Job Title</label>
+            <input class="jobtitle" v-model="form.title" type="text" name="title">
+          </div>
+          <div class="description">
+            <label class="jobdescriptions">Description</label>
+            <input class="jobdescription" v-model="form.description" type="text" name="description">
+          </div>
+          <div class="pay">
+            <label class="jobpays">Pay</label>
+            <input class="jobpay" v-model="form.pay" type="text" name="pay">
+          </div>
+          <div class="area">
+            <label class="jobareas">Area</label>
+            <input class="jobarea" v-model="form.area" type="text" name="area">
+          </div>
+          <div class="postJob">
+            <b-button class="postjob" v-on:click="notify" type="submit">Post Job </b-button>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <div class="Post">
-      <form id="app" @submit="onSubmit">
-        <div class="title">
-          <label class="jobtitles">Job Title</label>
-          <input class="jobtitle" v-model="form.title" type="text" name="title">
-        </div>
-        <div class="description">
-          <label class="jobdescriptions">Description</label>
-          <input class="jobdescription" v-model="form.description" type="text" name="description">
-        </div>
-        <div class="pay">
-          <label class="jobpays">Pay</label>
-          <input class="jobpay" v-model="form.pay" type="text" name="pay">
-        </div>
-        <div class="area">
-          <label class="jobareas">Area</label>
-          <input class="jobarea" v-model="form.area" type="text" name="area">
-        </div>
-        <div class="postJob">
-          <b-button class="postjob" v-on:click="notify" type="submit">Post Job </b-button>
-        </div>
-      </form>
-    </div>
-    </div>
-    <!-- <button type="sumbit">Post Job</button> -->
   </div>
 </template>
 

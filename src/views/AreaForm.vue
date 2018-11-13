@@ -13,8 +13,8 @@
             </b-card>
           </b-card-group>
           <div class="requestJob">
-              <b-button class="requestJob">Request Job</b-button>
-            </div>
+            <b-button class="requestJob">Request Job</b-button>
+          </div>
         </div>
       </div>
     </div>
@@ -36,29 +36,12 @@ export default {
     .then(response => {
       console.log(response.data)
       this.jobs = response.data
-    })
-    
+    }) 
   }
-
-
-
 }
 </script>
 
 <style scoped>
-/* .title{
-  background-color: lightblue
-  
-}
-.area{
-  background-color: coral
-}
-.pay{
-  background-color: indianred
-}
-.jobContainer{
-  margin-bottom: 5px;
-  border: 2px solid black;
-} */
+
 </style>
 

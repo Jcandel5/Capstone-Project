@@ -2,26 +2,36 @@
     <div class="jobForm mx-auto">
         <div class=CurrentJobs>
             <b-button class="EmoloyeeCurrentJobPage">
-                <router-link class="currentjobs" :to="{ path: 'EmoloyeeCurrentJobPage' }"><h2>Your Current Jobs</h2></router-link>
+                <router-link class="currentjobs" :to="{ path: 'EmoloyeeCurrentJobPage' }">
+                    <h2>Your Current Jobs</h2>
+                </router-link>
             </b-button>
         </div>
         <div class=jobSearch>
             <b-button id='job'>
-                <router-link class="jobbutton" :to="{ path: 'JobForm' }"><h2>Jobs</h2></router-link>
+                <router-link class="jobbutton" :to="{ path: 'JobForm' }">
+                    <h2>Jobs</h2>
+                </router-link>
             </b-button>
         </div>
         <div class="paySearch">
             <b-button id='pay'>
-                <router-link class="jobspays" :to="{ path: 'PayForm' }"><h2>Pay</h2></router-link>
+                <router-link class="jobspays" :to="{ path: 'PayForm' }">
+                    <h2>Pay</h2>
+                </router-link>
             </b-button>
         </div>
     </div>
 </template>
+
+
 <script>
 export default {
     name: 'EmployeeSearchPage'
 }
 </script>
+
+
 <style>
 .CurrentJobs{
     display:flex;
